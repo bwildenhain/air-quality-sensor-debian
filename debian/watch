@@ -1,0 +1,4 @@
+# Compulsory line, this is a version 3 file
+version=3
+
+opts="pgpsigurlmangle=s/$/.sig/" https://thinserv2.at-inet.de/~benedikt/air-quality-sensor/src/ air-quality-sensor-(.*)\.tar\.gz

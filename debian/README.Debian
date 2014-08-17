@@ -1,0 +1,8 @@
+air-quality-sensor for Debian
+-----------------------------
+
+This program can (and should) be used as non-root user. To use this
+program without root privileges, the user running air-quality-sensor has
+to be member of the air-quality-sensor group.
+
+ -- Benedikt Wildenhain <debian@benedikt-wildenhain.de>
