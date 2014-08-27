@@ -4,7 +4,7 @@ air-quality-sensor (0.1.1-5) unstable; urgency=low
 
  -- Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>  Mon, 25 Aug 2014 00:32:56 +0200
 
-air-quality-sensor (0.1.1-4) unstable; urgency=medium
+air-quality-sensor (0.1.1-4) unstable; urgency=low
 
   * Replaced placeholders in README.Debian
   * Fixed debian/copyright file
