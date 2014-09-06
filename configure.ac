@@ -1,4 +1,4 @@
-AC_INIT([air-quality-sensor], [0.1.1], [air-quality-sensor@benedikt-wildenhain.de])
+AC_INIT([air-quality-sensor], [0.1.2], [air-quality-sensor@benedikt-wildenhain.de])
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 AC_PROG_CC
 AM_PROG_CC_C_O
@@ -17,6 +17,13 @@ AC_CHECK_LIB(usb-1.0, libusb_get_port_number, [], [libusb_is_old=1])
 if test $libusb_is_old == 1
 then
     AC_DEFINE([LIBUSB_OLD], [yes], [Libusb is old and does not give information about topology of connected devices])
+fi
+
+
+if test $cross_compiling = no; then
+    AM_MISSING_PROG(HELP2MAN, help2man)
+else
+    HELP2MAN=:
 fi
 
 AC_CONFIG_HEADERS([config.h])

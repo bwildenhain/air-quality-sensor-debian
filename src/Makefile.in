@@ -203,6 +203,7 @@ ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EXEEXT = @EXEEXT@
+HELP2MAN = @HELP2MAN@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -274,11 +275,14 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-man_MANS = air-quality-sensor.1
-EXTRA_DIST = $(man_MANS)
 air_quality_sensor_CFLAGS = $(LIBUSB1_0_CFLAGS)
 air_quality_sensor_LDADD = $(LIBUSB1_0_LIBS)
 air_quality_sensor_SOURCES = air10.c
+
+# manpages
+man_MANS = air-quality-sensor.1
+EXTRA_DIST = $(man_MANS) manpage.include
+man_include = $(srcdir)/manpage.include
 all: all-am
 
 .SUFFIXES:
@@ -645,6 +649,9 @@ uninstall-man: uninstall-man1
 	ps ps-am tags tags-am uninstall uninstall-am \
 	uninstall-binPROGRAMS uninstall-man uninstall-man1
 
+
+air-quality-sensor.1: $(air_quality_sensor_SOURCES) $(man_include)
+	$(HELP2MAN) --no-info --include $(man_include) --name="User space driver for AppliedSensor's Indoor Air Monitor" ./$(bin_PROGRAMS) -o $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
