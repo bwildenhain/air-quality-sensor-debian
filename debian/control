@@ -3,9 +3,9 @@ Section: utils
 Priority: optional
 Maintainer: Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
 Build-Depends: debhelper (>= 9), dh-autoreconf, libusb-1.0-0-dev, pkg-config
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/bwildenhain/air-quality-sensor
-Vcs-Git: http://github.com/bwildenhain/air-quality-sensor-debian.git
+Vcs-Git: https://github.com/bwildenhain/air-quality-sensor-debian.git
 Vcs-Browser: https://github.com/bwildenhain/air-quality-sensor-debian
 
 Package: air-quality-sensor
