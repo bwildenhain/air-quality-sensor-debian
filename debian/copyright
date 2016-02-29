@@ -4,11 +4,11 @@ Source: https://github.com/bwildenhain/air-quality-sensor/tree/0.1
 
 Files: *
 Copyright: 2014 Jan-Benedict Glaw <jbglaw@lug-owl.de>
-           2014 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
+           2014-2016 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
 License: GPL-3.0+
 
 Files: debian/*
-Copyright: 2014 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
+Copyright: 2014-2016 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
 License: GPL-3.0+
 
 License: GPL-3.0+
