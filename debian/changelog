@@ -1,3 +1,12 @@
+air-quality-sensor (0.1.4.1-1) unstable; urgency=medium
+
+  * New upstream release 0.1.4.1, includes appstream data (Closes: #839864)
+  * Bump SV to 4.1.0 - no changes
+  * Use debhelper 10
+  * Fixed some typos
+
+ -- Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>  Thu, 31 Aug 2017 23:56:51 +0200
+
 air-quality-sensor (0.1.4-1) unstable; urgency=medium
 
   * New upstream release 0.1.4, package reproducible (Closes: #809025)
