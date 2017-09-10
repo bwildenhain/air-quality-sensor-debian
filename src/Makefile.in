@@ -99,7 +99,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
-	"$(DESTDIR)$(appdatadir)"
+	"$(DESTDIR)$(metainfodir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_air_quality_sensor_OBJECTS = air_quality_sensor-air10.$(OBJEXT)
 air_quality_sensor_OBJECTS = $(am_air_quality_sensor_OBJECTS)
@@ -176,7 +176,7 @@ am__uninstall_files_from_dir = { \
 man1dir = $(mandir)/man1
 NROFF = nroff
 MANS = $(man_MANS)
-DATA = $(appdata_DATA)
+DATA = $(metainfo_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -297,9 +297,9 @@ air_quality_sensor_SOURCES = air10.c
 man_MANS = air-quality-sensor.1
 
 # Appdata files
-appdatadir = $(datadir)/appdata
-appdata_DATA = de.benedikt-wildenhain.air-quality-sensor.metainfo.xml
-EXTRA_DIST = $(man_MANS) manpage.include $(appdata_DATA)
+metainfodir = $(datadir)/metainfo
+metainfo_DATA = de.benedikt-wildenhain.air-quality-sensor.metainfo.xml
+EXTRA_DIST = $(man_MANS) manpage.include $(metainfo_DATA)
 man_include = $(srcdir)/manpage.include
 all: all-am
 
@@ -459,27 +459,27 @@ uninstall-man1:
 	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
-install-appdataDATA: $(appdata_DATA)
+install-metainfoDATA: $(metainfo_DATA)
 	@$(NORMAL_INSTALL)
-	@list='$(appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	@list='$(metainfo_DATA)'; test -n "$(metainfodir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(appdatadir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(appdatadir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(metainfodir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(metainfodir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(appdatadir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(appdatadir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(metainfodir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(metainfodir)" || exit $$?; \
 	done
 
-uninstall-appdataDATA:
+uninstall-metainfoDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	@list='$(metainfo_DATA)'; test -n "$(metainfodir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(appdatadir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(metainfodir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -567,7 +567,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(MANS) $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(appdatadir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(metainfodir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -622,7 +622,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-appdataDATA install-man
+install-data-am: install-man install-metainfoDATA
 
 install-dvi: install-dvi-am
 
@@ -667,8 +667,8 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-appdataDATA uninstall-binPROGRAMS \
-	uninstall-man
+uninstall-am: uninstall-binPROGRAMS uninstall-man \
+	uninstall-metainfoDATA
 
 uninstall-man: uninstall-man1
 
@@ -678,16 +678,16 @@ uninstall-man: uninstall-man1
 	clean-binPROGRAMS clean-generic cscopelist-am ctags ctags-am \
 	distclean distclean-compile distclean-generic distclean-tags \
 	distdir dvi dvi-am html html-am info info-am install \
-	install-am install-appdataDATA install-binPROGRAMS \
-	install-data install-data-am install-dvi install-dvi-am \
-	install-exec install-exec-am install-html install-html-am \
-	install-info install-info-am install-man install-man1 \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-appdataDATA \
-	uninstall-binPROGRAMS uninstall-man uninstall-man1
+	install-am install-binPROGRAMS install-data install-data-am \
+	install-dvi install-dvi-am install-exec install-exec-am \
+	install-html install-html-am install-info install-info-am \
+	install-man install-man1 install-metainfoDATA install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-binPROGRAMS uninstall-man \
+	uninstall-man1 uninstall-metainfoDATA
 
 .PRECIOUS: Makefile
 
