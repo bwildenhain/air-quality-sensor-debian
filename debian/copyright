@@ -1,14 +1,14 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: air-quality-sensor
-Source: https://github.com/bwildenhain/air-quality-sensor/tree/0.1
+Source: https://salsa.debian.org/tinker-team/air-quality-sensor
 
 Files: *
 Copyright: 2014 Jan-Benedict Glaw <jbglaw@lug-owl.de>
-           2014-2016 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
+           2014-2019 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
 License: GPL-3.0+
 
 Files: debian/*
-Copyright: 2014-2016 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
+Copyright: 2014-2019 Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>
 License: GPL-3.0+
 
 License: GPL-3.0+
