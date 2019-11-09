@@ -1,3 +1,11 @@
+air-quality-sensor (0.1.5)
+
+  * Fix bug which made air-quality-sensor unusable when compiled with
+    getopt on armfh (and possibly other architectures).
+  * Move project from GitHub to salsa.debian.org
+
+   -- Benedikt Wildenhain <debian@benedikt-wildenhain.de>  Sat, 09 Nov 2019 23:43:27 +0100
+
 air-quality-sensor (0.1.4.2)
 
   * Moved appstream data to PREFIX/share/metainfo/
