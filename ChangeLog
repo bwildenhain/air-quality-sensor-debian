@@ -1,3 +1,15 @@
+air-quality-sensor (0.1.4.2)
+
+  * Moved appstream data to PREFIX/share/metainfo/
+
+air-quality-sensor (0.1.4.1)
+
+  * Added appstream data
+
+air-quality-sensor (0.1.4)
+
+  * Make build reproducible
+
 air-quality-sensor (0.1.3)
 
   * Added --verbose (-v)
