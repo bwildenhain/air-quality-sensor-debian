@@ -2,6 +2,7 @@
     air-quality-sensor - user space driver for USB Air Quality Sensor CO-20
 
     Copyright (C) 2014 Jan-Benedict Glaw
+    Copyright (C) 2014-2019 Benedikt Wildenhain
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -256,8 +257,8 @@ Read the current air quality from a compatible attached sensor\n\n\
 	-h, --help          display this help and exit\n\
         -v, --verbose	    be verbose\n\n\
         -V, --version       display version information and exit\n\n\
-Report bugs on <https://github.com/bwildenhain/air-quality-sensor/issues> or send a mail to air-quality-sensor@benedikt-wildenhain.de\n\
-Home page: <https://github.com/bwildenhain/air-quality-sensor>\n\
+Report bugs on <https://salsa.debian.org/tinker-team/air-quality-sensor-debian/issues> or use Debian's bug tracker (see https://bugs.debian.org/air-quality-sensor) \n\
+Home page: <https://salsa.debian.org/tinker-team/air-quality-sensor-debian>\n\
 "), PACKAGE_NAME);
 }
 
@@ -268,7 +269,7 @@ print_version ()
 
   printf (("\
 Copyright (C) 2014 Jan-Benedict Glaw\n\
-Copyright (C) %s Benedikt Wildenhain\n\n\
+Copyright (C) 2014-%s Benedikt Wildenhain\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n"), COPYRIGHT_YEAR);
@@ -281,7 +282,7 @@ main (int argc, char *argv[])
 
 
 #ifdef HAVE_GETOPT_LONG
-  char c;
+  int c;
   int option_index = 0;
   while ((c = getopt_long (argc, argv, "hVv", longopts, &option_index)) != -1)
     {

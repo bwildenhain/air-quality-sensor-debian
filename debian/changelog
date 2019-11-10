@@ -1,3 +1,10 @@
+air-quality-sensor (0.1.5-1) unstable; urgency=medium
+
+  * New upstream release 0.1.5, now works on armhf
+  * Updated signing key for package (old one expired)
+
+ -- Benedikt Wildenhain <esperanto@benedikt-wildenhain.de>  Sun, 10 Nov 2019 14:56:16 +0100
+
 air-quality-sensor (0.1.4.2-1) unstable; urgency=low
 
   * New upstream release 0.1.4.1, includes appstream data (Closes: #839864)
